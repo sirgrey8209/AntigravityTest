@@ -1,4 +1,4 @@
-import React, { useEffect, useImperativeHandle, forwardRef } from 'react';
+import { useEffect, useImperativeHandle, forwardRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
 export interface PlayerHandle {
