@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+# Divider Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A puzzle strategy defense game using division and subtraction mechanics
 
-Currently, two official plugins are available:
+## 🎮 Game Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Divider** is a mobile-optimized web game where players defeat enemies by strategically using numbered weapons to reduce enemy HP to exactly 0 through division and subtraction rules.
 
-## React Compiler
+## 🚀 Play Now
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Live Demo**: [GitHub Pages](https://sirgrey8209.github.io/DividerGame/) _(URL will be updated after repository rename)_
 
-## Expanding the ESLint configuration
+## ✨ Key Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Unique Math-Based Combat**: Division and subtraction mechanics
+- **Mobile Optimized**: Touch-friendly drag & drop controls
+- **Progressive Gameplay**: Tutorial → World Map → Dungeons
+- **Boss Battles**: Epic encounters with special animations
+- **Dark Theme**: Cybernetic neon visual style
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🎯 Game Rules
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Weapons
+- **Square (Divider)**: Deals damage only if `Enemy HP % Weapon = 0`, then `New HP = HP / Weapon`
+- **Circle (Subtractor)**: Always works, `New HP = HP - Weapon`
+- **Special Rule**: Division result of 1 instantly becomes 0 (instant kill)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Objective
+Reduce enemy HP to exactly 0 before they reach and attack you!
+
+## 🛠️ Tech Stack
+
+- **React** 19.2 + **TypeScript** 5.9
+- **Vite** 7.2 - Lightning fast build tool
+- **Zustand** - State management
+- **Framer Motion** - Smooth animations
+- **GitHub Pages** - Deployment
+
+## 🏃‍♂️ Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/      # React components
+├── stores/          # Zustand state management
+├── types/           # TypeScript definitions
+└── utils/           # Utility functions
+```
+
+## 📝 Documentation
+
+See [Claude.md](Claude.md) for detailed development logs and project context.
+
+## 📄 License
+
+This project is private and not licensed for redistribution.
+
+---
+
+**Note**: This project was originally a toy project using Google Gemini's Antigravity feature, but has evolved into a full game with original mechanics.
